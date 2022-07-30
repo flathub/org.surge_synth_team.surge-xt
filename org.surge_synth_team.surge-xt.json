@@ -53,6 +53,10 @@
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
             ],
             "no-make-install": true,
+            "make-args": [
+                "surge-xt_Standalone",
+                "surge-fx_Standalone"
+            ],
             "post-install": [
                 "install -Dm755 src/surge-xt/surge-xt_artefacts/RelWithDebInfo/Standalone/Surge\\ XT ${FLATPAK_DEST}/bin/Surge-XT",
                 "install -Dm755 src/surge-fx/surge-fx_artefacts/RelWithDebInfo/Standalone/Surge\\ XT\\ Effects ${FLATPAK_DEST}/bin/Surge-XT-Effects",
@@ -63,12 +67,7 @@
                 "install -Dm644 resources/assets/Logo/SVG/surge_icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
                 "install -Dm644 resources/surge_effects_bank/SurgeLogoOnlyBlue.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.effects.svg",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml",
-                "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/surge-xt LICENSE",
-                "install -d ${PLUGINS_DIR}/vst3/",
-                "cp -R src/surge-fx/surge-fx_artefacts/RelWithDebInfo/VST3/*.vst3 ${PLUGINS_DIR}/vst3/",
-                "cp -R src/surge-xt/surge-xt_artefacts/RelWithDebInfo/VST3/*.vst3 ${PLUGINS_DIR}/vst3/",
-                "install -d ${PLUGINS_DIR}/share/surge-xt",
-                "cp -a resources/data/* ${PLUGINS_DIR}/share/surge-xt"
+                "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/surge-xt LICENSE"
             ],
             "sources": [
                 {
@@ -91,11 +90,11 @@
                 }
             ]
         },
-        "shared-modules/linux-audio/lv2.json",
         {
-            "name": "surge-xt-lv2",
+            "name": "surge-xt-vst3",
             "buildsystem": "cmake-ninja",
             "build-options": {
+                "prefix": "/app/extensions/Plugins/Surge-XT",
                 "arch": {
                     "aarch64": {
                         "config-opts": [
@@ -105,7 +104,45 @@
                 }
             },
             "config-opts": [
-                "-DCMAKE_INSTALL_PREFIX=$PLUGINS_DIR",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DSURGE_SKIP_STANDALONE=YES"
+            ],
+            "no-make-install": true,
+            "make-args": [
+                "surge-xt_VST3",
+                "surge-fx_VST3"
+            ],
+            "post-install": [
+                "install -d ${PLUGINS_DIR}/vst3/",
+                "cp -R src/surge-fx/surge-fx_artefacts/RelWithDebInfo/VST3/*.vst3 ${PLUGINS_DIR}/vst3/",
+                "cp -R src/surge-xt/surge-xt_artefacts/RelWithDebInfo/VST3/*.vst3 ${PLUGINS_DIR}/vst3/",
+                "install -d ${PLUGINS_DIR}/share/surge-xt",
+                "cp -a resources/data/* ${PLUGINS_DIR}/share/surge-xt"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.0.1/surge-src-1.0.1.tar.gz",
+                    "strip-components": 2,
+                    "sha256": "100b536f741c62529800fc26e3773567591385d4152db305382b4315f6e39c55"
+                }
+            ]
+        },
+        "shared-modules/linux-audio/lv2.json",
+        {
+            "name": "surge-xt-lv2",
+            "buildsystem": "cmake-ninja",
+            "build-options": {
+                "prefix": "/app/extensions/Plugins/Surge-XT",
+                "arch": {
+                    "aarch64": {
+                        "config-opts": [
+                            "-DLINUX_ON_ARM=True"
+                        ]
+                    }
+                }
+            },
+            "config-opts": [
                 "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
                 "-DSURGE_SKIP_STANDALONE=YES",
                 "-DJUCE_SUPPORTS_LV2=True",
