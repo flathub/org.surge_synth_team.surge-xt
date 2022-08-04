@@ -14,7 +14,7 @@
     ],
     "build-options": {
         "env": {
-            "SURGE_VERSION": "1.0.1",
+            "SURGE_VERSION": "1.1.0",
             "PLUGINS_DIR": "/app/extensions/Plugins/Surge-XT",
             "PLUGINS_ID": "org.freedesktop.LinuxAudio.Plugins.Surge-XT"
         }
@@ -64,17 +64,17 @@
                 "cp -a resources/data/* ${FLATPAK_DEST}/share/surge-xt",
                 "install -Dm644 org.surge_synth_team.surge-xt.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
                 "install -Dm644 org.surge_synth_team.surge-xt.effects.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.effects.desktop",
-                "install -Dm644 resources/assets/Logo/SVG/surge_icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-                "install -Dm644 resources/surge_effects_bank/SurgeLogoOnlyBlue.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.effects.svg",
+                "install -Dm644 scripts/installer_linux/assets/icons/scalable/apps/surge-xt.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "install -Dm644 scripts/installer_linux/assets/icons/scalable/apps/surge-xt-fx.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.effects.svg",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml",
                 "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/surge-xt LICENSE"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.0.1/surge-src-1.0.1.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.0/surge-src-1.1.0.tar.gz",
                     "strip-components": 2,
-                    "sha256": "100b536f741c62529800fc26e3773567591385d4152db305382b4315f6e39c55"
+                    "sha256": "82b662b6b3b37a9007a750ce60a8498c96eb906bc1b718ae3cf66ee820f0d179"
                 },
                 {
                     "type": "file",
@@ -110,21 +110,26 @@
             "no-make-install": true,
             "make-args": [
                 "surge-xt_VST3",
-                "surge-fx_VST3"
+                "surge-fx_VST3",
+                "surge-xt_CLAP",
+                "surge-fx_CLAP"
             ],
             "post-install": [
                 "install -d ${PLUGINS_DIR}/vst3/",
                 "cp -R src/surge-fx/surge-fx_artefacts/RelWithDebInfo/VST3/*.vst3 ${PLUGINS_DIR}/vst3/",
                 "cp -R src/surge-xt/surge-xt_artefacts/RelWithDebInfo/VST3/*.vst3 ${PLUGINS_DIR}/vst3/",
+                "install -d ${PLUGINS_DIR}/clap/",
+                "cp -R src/surge-fx/surge-fx_artefacts/RelWithDebInfo/CLAP/*.clap ${PLUGINS_DIR}/clap/",
+                "cp -R src/surge-xt/surge-xt_artefacts/RelWithDebInfo/CLAP/*.clap ${PLUGINS_DIR}/clap/",
                 "install -d ${PLUGINS_DIR}/share/surge-xt",
                 "cp -a resources/data/* ${PLUGINS_DIR}/share/surge-xt"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.0.1/surge-src-1.0.1.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.0/surge-src-1.1.0.tar.gz",
                     "strip-components": 2,
-                    "sha256": "100b536f741c62529800fc26e3773567591385d4152db305382b4315f6e39c55"
+                    "sha256": "82b662b6b3b37a9007a750ce60a8498c96eb906bc1b718ae3cf66ee820f0d179"
                 }
             ]
         },
@@ -166,14 +171,14 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.0.1/surge-src-1.0.1.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.0/surge-src-1.1.0.tar.gz",
                     "strip-components": 2,
-                    "sha256": "100b536f741c62529800fc26e3773567591385d4152db305382b4315f6e39c55"
+                    "sha256": "82b662b6b3b37a9007a750ce60a8498c96eb906bc1b718ae3cf66ee820f0d179"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/lv2-porting-project/JUCE",
-                    "commit": "000e15a1e108101a68aa068b5c621a0d5b58f4d6",
+                    "commit": "58b303e249670703f5d580e92bcc92b9a516fdfc",
                     "dest": "JUCE-lv2"
                 },
                 {
