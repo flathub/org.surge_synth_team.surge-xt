@@ -14,7 +14,7 @@
     ],
     "build-options": {
         "env": {
-            "SURGE_VERSION": "1.1.0",
+            "SURGE_VERSION": "1.1.1",
             "PLUGINS_DIR": "/app/extensions/Plugins/Surge-XT",
             "PLUGINS_ID": "org.freedesktop.LinuxAudio.Plugins.Surge-XT"
         }
@@ -72,9 +72,13 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.0/surge-src-1.1.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.1/surge-src-1.1.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "82b662b6b3b37a9007a750ce60a8498c96eb906bc1b718ae3cf66ee820f0d179"
+                    "sha256": "546181606fbedad2280a5d14d82355312e6bfd3b14285ed099335e5bb2c13485"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-ui-crash.patch"
                 },
                 {
                     "type": "file",
@@ -127,9 +131,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.0/surge-src-1.1.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.1/surge-src-1.1.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "82b662b6b3b37a9007a750ce60a8498c96eb906bc1b718ae3cf66ee820f0d179"
+                    "sha256": "546181606fbedad2280a5d14d82355312e6bfd3b14285ed099335e5bb2c13485"
                 }
             ]
         },
@@ -171,9 +175,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.0/surge-src-1.1.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.1/surge-src-1.1.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "82b662b6b3b37a9007a750ce60a8498c96eb906bc1b718ae3cf66ee820f0d179"
+                    "sha256": "546181606fbedad2280a5d14d82355312e6bfd3b14285ed099335e5bb2c13485"
                 },
                 {
                     "type": "git",
