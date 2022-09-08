@@ -1,7 +1,7 @@
 {
     "id": "org.surge_synth_team.surge-xt",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "21.08",
+    "runtime-version": "22.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "Surge-XT",
     "finish-args": [
@@ -22,7 +22,7 @@
     "add-extensions": {
         "org.freedesktop.LinuxAudio.Plugins.Surge-XT": {
             "directory": "extensions/Plugins/Surge-XT",
-            "version": "21.08",
+            "version": "22.08",
             "add-ld-path": "lib",
             "bundle": true,
             "subdirectories": true,
@@ -31,12 +31,9 @@
         }
     },
     "cleanup": [
-        "/bin/alsa_*",
-        "/bin/jack*",
         "/lib/lv2"
     ],
     "modules": [
-        "shared-modules/linux-audio/jack2.json",
         {
             "name": "surge-xt",
             "buildsystem": "cmake-ninja",
@@ -184,6 +181,10 @@
                     "url": "https://github.com/lv2-porting-project/JUCE",
                     "commit": "58b303e249670703f5d580e92bcc92b9a516fdfc",
                     "dest": "JUCE-lv2"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/juce-616-header.patch"
                 },
                 {
                     "type": "file",
