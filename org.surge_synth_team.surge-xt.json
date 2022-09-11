@@ -131,6 +131,10 @@
                     "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.1/surge-src-1.1.1.tar.gz",
                     "strip-components": 2,
                     "sha256": "546181606fbedad2280a5d14d82355312e6bfd3b14285ed099335e5bb2c13485"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-ui-crash.patch"
                 }
             ]
         },
@@ -181,6 +185,10 @@
                     "url": "https://github.com/lv2-porting-project/JUCE",
                     "commit": "58b303e249670703f5d580e92bcc92b9a516fdfc",
                     "dest": "JUCE-lv2"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-ui-crash.patch"
                 },
                 {
                     "type": "patch",
