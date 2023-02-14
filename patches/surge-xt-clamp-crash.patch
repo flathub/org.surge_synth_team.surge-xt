@@ -1,0 +1,44 @@
+From fab28b3d3c9f7def76803a51e5f62b963c307f52 Mon Sep 17 00:00:00 2001
+From: Paul <baconpaul@users.noreply.github.com>
+Date: Sun, 20 Nov 2022 09:00:41 -0500
+Subject: [PATCH] Fix WT-length-one clamp error (#6703)
+
+In recent versions we allowed wavetables of length one
+but when doing so missed this clamp which resulted in
+hi < lo. that is UB (but defacto clamped to low) but
+that inversion triggers an assert on some configurations.
+
+So (1) add a debug assert to our limit range and (2) use a max of
+0 on the upper bound.
+
+Closes #6702
+---
+ src/common/dsp/oscillators/WavetableOscillator.cpp | 2 +-
+ src/common/dsp/vembertech/basic_dsp.h              | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/common/dsp/oscillators/WavetableOscillator.cpp b/src/common/dsp/oscillators/WavetableOscillator.cpp
+index 1f651d812af..47f6e5d3ed1 100644
+--- a/src/common/dsp/oscillators/WavetableOscillator.cpp
++++ b/src/common/dsp/oscillators/WavetableOscillator.cpp
+@@ -77,7 +77,7 @@ void WavetableOscillator::init(float pitch, bool is_display, bool nonzero_init_d
+     float intpart;
+     shape *= ((float)oscdata->wt.n_tables - 1.f + nointerp) * 0.99999f;
+     tableipol = modff(shape, &intpart);
+-    tableid = limit_range((int)intpart, 0, (int)oscdata->wt.n_tables - 2 + nointerp);
++    tableid = limit_range((int)intpart, 0, std::max((int)oscdata->wt.n_tables - 2 + nointerp, 0));
+     last_tableipol = tableipol;
+     last_tableid = tableid;
+     hskew = 0.f;
+diff --git a/src/common/dsp/vembertech/basic_dsp.h b/src/common/dsp/vembertech/basic_dsp.h
+index 6cb7a59598e..fde44f36573 100644
+--- a/src/common/dsp/vembertech/basic_dsp.h
++++ b/src/common/dsp/vembertech/basic_dsp.h
+@@ -4,6 +4,7 @@
+ 
+ template <typename T> inline T limit_range(const T &x, const T &low, const T &high)
+ {
++    assert(low <= high);
+     return std::clamp(x, low, high);
+ }
+ 

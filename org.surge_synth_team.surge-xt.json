@@ -74,6 +74,10 @@
                     "sha256": "ed0febf582928aa75b7091a655dae2aa3ee1c7c1b4a1ecbf8f89d45abb4f27b4"
                 },
                 {
+                    "type": "patch",
+                    "path": "patches/surge-xt-clamp-crash.patch"
+                },
+                {
                     "type": "file",
                     "path": "org.surge_synth_team.surge-xt.desktop"
                 },
@@ -127,6 +131,10 @@
                     "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.2/surge-src-1.1.2.tar.gz",
                     "strip-components": 2,
                     "sha256": "ed0febf582928aa75b7091a655dae2aa3ee1c7c1b4a1ecbf8f89d45abb4f27b4"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-xt-clamp-crash.patch"
                 }
             ]
         },
@@ -180,7 +188,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/juce-616-header.patch"
+                    "paths": [
+                        "patches/juce-616-header.patch",
+                        "patches/surge-xt-clamp-crash.patch"
+                    ]
                 },
                 {
                     "type": "file",
