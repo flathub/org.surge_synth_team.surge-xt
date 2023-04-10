@@ -14,7 +14,7 @@
     ],
     "build-options": {
         "env": {
-            "SURGE_VERSION": "1.1.2",
+            "SURGE_VERSION": "1.2.0",
             "PLUGINS_DIR": "/app/extensions/Plugins/Surge-XT",
             "PLUGINS_ID": "org.freedesktop.LinuxAudio.Plugins.Surge-XT"
         }
@@ -69,13 +69,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.2/surge-src-1.1.2.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.0/surge-src-1.2.0.tar.gz",
                     "strip-components": 2,
-                    "sha256": "ed0febf582928aa75b7091a655dae2aa3ee1c7c1b4a1ecbf8f89d45abb4f27b4"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/surge-xt-clamp-crash.patch"
+                    "sha256": "fc5456309375feef778bc0b4d8cd27cdf8f8dec533348a3e84dd343639f97ce8"
                 },
                 {
                     "type": "file",
@@ -128,13 +124,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.2/surge-src-1.1.2.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.0/surge-src-1.2.0.tar.gz",
                     "strip-components": 2,
-                    "sha256": "ed0febf582928aa75b7091a655dae2aa3ee1c7c1b4a1ecbf8f89d45abb4f27b4"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/surge-xt-clamp-crash.patch"
+                    "sha256": "fc5456309375feef778bc0b4d8cd27cdf8f8dec533348a3e84dd343639f97ce8"
                 }
             ]
         },
@@ -176,22 +168,15 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.1.2/surge-src-1.1.2.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.0/surge-src-1.2.0.tar.gz",
                     "strip-components": 2,
-                    "sha256": "ed0febf582928aa75b7091a655dae2aa3ee1c7c1b4a1ecbf8f89d45abb4f27b4"
+                    "sha256": "fc5456309375feef778bc0b4d8cd27cdf8f8dec533348a3e84dd343639f97ce8"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/lv2-porting-project/JUCE",
-                    "commit": "58b303e249670703f5d580e92bcc92b9a516fdfc",
+                    "commit": "e825ad977cf4499a7bfa05b97b208236f8fd253b",
                     "dest": "JUCE-lv2"
-                },
-                {
-                    "type": "patch",
-                    "paths": [
-                        "patches/juce-616-header.patch",
-                        "patches/surge-xt-clamp-crash.patch"
-                    ]
                 },
                 {
                     "type": "file",
