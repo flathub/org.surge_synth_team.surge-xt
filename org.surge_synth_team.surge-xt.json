@@ -14,7 +14,7 @@
     ],
     "build-options": {
         "env": {
-            "SURGE_VERSION": "1.2.0",
+            "SURGE_VERSION": "1.2.1",
             "PLUGINS_DIR": "/app/extensions/Plugins/Surge-XT",
             "PLUGINS_ID": "org.freedesktop.LinuxAudio.Plugins.Surge-XT"
         }
@@ -69,9 +69,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.0/surge-src-1.2.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.1/surge-src-1.2.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "fc5456309375feef778bc0b4d8cd27cdf8f8dec533348a3e84dd343639f97ce8"
+                    "sha256": "2455807a15c1c6ce53abd5cf46de69db56b22d5ec8be027e7e38eca435405ec5"
                 },
                 {
                     "type": "file",
@@ -124,9 +124,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.0/surge-src-1.2.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.1/surge-src-1.2.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "fc5456309375feef778bc0b4d8cd27cdf8f8dec533348a3e84dd343639f97ce8"
+                    "sha256": "2455807a15c1c6ce53abd5cf46de69db56b22d5ec8be027e7e38eca435405ec5"
                 }
             ]
         },
@@ -168,9 +168,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.0/surge-src-1.2.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.1/surge-src-1.2.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "fc5456309375feef778bc0b4d8cd27cdf8f8dec533348a3e84dd343639f97ce8"
+                    "sha256": "2455807a15c1c6ce53abd5cf46de69db56b22d5ec8be027e7e38eca435405ec5"
                 },
                 {
                     "type": "git",
