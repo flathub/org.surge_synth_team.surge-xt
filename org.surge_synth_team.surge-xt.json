@@ -1,7 +1,7 @@
 {
     "id": "org.surge_synth_team.surge-xt",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "22.08",
+    "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "Surge-XT",
     "finish-args": [
@@ -22,7 +22,7 @@
     "add-extensions": {
         "org.freedesktop.LinuxAudio.Plugins.Surge-XT": {
             "directory": "extensions/Plugins/Surge-XT",
-            "version": "22.08",
+            "version": "23.08",
             "add-ld-path": "lib",
             "bundle": true,
             "subdirectories": true,
@@ -72,6 +72,18 @@
                     "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.3/surge-src-1.2.3.tar.gz",
                     "strip-components": 2,
                     "sha256": "ae63f5d06c7d5689360cfeb472b6222311a2c720b74a909f598ce5743f23d094"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-build.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-sst-build.patch",
+                    "options": [
+                        "-d",
+                        "libs/sst/sst-plugininfra"
+                    ]
                 },
                 {
                     "type": "file",
@@ -127,6 +139,18 @@
                     "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.2.3/surge-src-1.2.3.tar.gz",
                     "strip-components": 2,
                     "sha256": "ae63f5d06c7d5689360cfeb472b6222311a2c720b74a909f598ce5743f23d094"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-build.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-sst-build.patch",
+                    "options": [
+                        "-d",
+                        "libs/sst/sst-plugininfra"
+                    ]
                 }
             ]
         },
@@ -177,6 +201,18 @@
                     "url": "https://github.com/lv2-porting-project/JUCE",
                     "commit": "e825ad977cf4499a7bfa05b97b208236f8fd253b",
                     "dest": "JUCE-lv2"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-build.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/surge-sst-build.patch",
+                    "options": [
+                        "-d",
+                        "libs/sst/sst-plugininfra"
+                    ]
                 },
                 {
                     "type": "file",

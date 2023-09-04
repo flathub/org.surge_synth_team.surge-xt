@@ -1,0 +1,11 @@
+diff --git a/src/common/SkinColors.h b/src/common/SkinColors.h
+index f4a12b6a..2c6cdd3a 100644
+--- a/src/common/SkinColors.h
++++ b/src/common/SkinColors.h
+@@ -1,5 +1,6 @@
+ #pragma once
+ 
++#include <cstdint>
+ #include <string>
+ #include <vector>
+ 

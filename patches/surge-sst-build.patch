@@ -1,0 +1,12 @@
+diff --git a/include/sst/plugininfra/cpufeatures.h b/include/sst/plugininfra/cpufeatures.h
+index 4cfdde2..400f074 100644
+--- a/include/sst/plugininfra/cpufeatures.h
++++ b/include/sst/plugininfra/cpufeatures.h
+@@ -2,6 +2,7 @@
+ #ifndef SST_PLUGININFRA_CPUFEATURES_H
+ #define SST_PLUGININFRA_CPUFEATURES_H
+ 
++#include <cstdint>
+ #include <string>
+ 
+ namespace sst
