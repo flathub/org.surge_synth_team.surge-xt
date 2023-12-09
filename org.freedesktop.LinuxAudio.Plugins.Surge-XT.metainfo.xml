@@ -2,14 +2,14 @@
 <component type="addon">
   <id>org.freedesktop.LinuxAudio.Plugins.Surge-XT</id>
   <extends>org.surge_synth_team.surge-xt</extends>
-  <name>Surge XT Synthesizer LV2/VST3/CLAP</name>
-  <summary>Surge XT synthesizer and effects LV2/VST3/CLAP plugins</summary>
+  <name>Surge XT Synthesizer VST3/CLAP</name>
+  <summary>Surge XT synthesizer and effects VST3/CLAP plugins</summary>
   <description>
     <p>Surge XT is an Hybrid Synthesizer</p>
     <p>Featuring many synthesis techniques, a great selection of
     filters, a flexible modulation engine, a smorgasbord of effects,
     and modern features like MPE and microtuning.</p>
-    <p>This is the LV2/VST3/CLAP plugins version.</p>
+    <p>This is the VST3/CLAP plugins version.</p>
   </description>
   <url type="homepage">https://surge-synthesizer.github.io/</url>
   <project_license>GPL-3.0+</project_license>
@@ -17,6 +17,12 @@
   <update_contact>hub_AT_figuiere.net</update_contact>
   <content_rating type="oars-1.1" />
   <releases>
+    <release date="2023-12-08" version="1.3.0">
+      <description>
+        <p>Removed the LV2 plugins</p>
+      </description>
+    </release>
+    <release date="2023-05-05" version="1.2.3" />
     <release date="2023-05-01" version="1.2.2" />
     <release date="2023-04-30" version="1.2.1" />
     <release date="2023-04-10" version="1.2.0" />
