@@ -14,7 +14,7 @@
     ],
     "build-options": {
         "env": {
-            "SURGE_VERSION": "1.3.0",
+            "SURGE_VERSION": "1.3.1",
             "PLUGINS_DIR": "/app/extensions/Plugins/Surge-XT",
             "PLUGINS_ID": "org.freedesktop.LinuxAudio.Plugins.Surge-XT"
         }
@@ -69,9 +69,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.0/surge-src-1.3.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.1/surge-src-1.3.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "d92f6604fbc73cb9487349c370b9b0a1ab81eb09cef13923eba4e9855339e339"
+                    "sha256": "9bf2e4a88c18003e51c62b8bf646c52d0f735dfcdb952a32a19bba389fd35229"
                 },
                 {
                     "type": "patch",
@@ -144,9 +144,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.0/surge-src-1.3.0.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.1/surge-src-1.3.1.tar.gz",
                     "strip-components": 2,
-                    "sha256": "d92f6604fbc73cb9487349c370b9b0a1ab81eb09cef13923eba4e9855339e339"
+                    "sha256": "9bf2e4a88c18003e51c62b8bf646c52d0f735dfcdb952a32a19bba389fd35229"
                 },
                 {
                     "type": "patch",
