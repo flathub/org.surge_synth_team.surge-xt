@@ -14,7 +14,7 @@
     ],
     "build-options": {
         "env": {
-            "SURGE_VERSION": "1.3.1",
+            "SURGE_VERSION": "1.3.2",
             "PLUGINS_DIR": "/app/extensions/Plugins/Surge-XT",
             "PLUGINS_ID": "org.freedesktop.LinuxAudio.Plugins.Surge-XT"
         }
@@ -69,9 +69,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.1/surge-src-1.3.1.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.2/surge-src-1.3.2.tar.gz",
                     "strip-components": 2,
-                    "sha256": "9bf2e4a88c18003e51c62b8bf646c52d0f735dfcdb952a32a19bba389fd35229"
+                    "sha256": "d12af4f73fbf10f329727e346c5d8686982f7652ebdbe848a76661382718595e"
                 },
                 {
                     "type": "patch",
@@ -136,7 +136,7 @@
 
                 "install -Dm644 resources/assets/Logo/SVG/surge_icon.svg ${PLUGINS_DIR}/share/icons/hicolor/scalable/apps/${PLUGINS_ID}.svg",
                 "install -Dm644 -t ${PLUGINS_DIR}/share/metainfo ${PLUGINS_ID}.metainfo.xml",
-                "appstream-compose --basename=${PLUGINS_ID} --prefix=${PLUGINS_DIR} --origin=flatpak ${PLUGINS_ID}",
+                "appstreamcli compose --components=${PLUGINS_ID} --prefix=/ --origin=${PLUGINS_ID} --result-root=${PLUGINS_DIR} --data-dir=${PLUGINS_DIR}/share/app-info/xmls ${PLUGINS_DIR}",
                 "install -Dm644 org.surge_synth_team.surge-xt.desktop ${PLUGINS_DIR}/share/applications/${PLUGINS_ID}.desktop",
                 "desktop-file-edit --set-icon=${PLUGINS_ID} ${PLUGINS_DIR}/share/applications/${PLUGINS_ID}.desktop",
                 "install -Dm644 -t ${PLUGINS_DIR}/share/licenses/surge-xt LICENSE"
@@ -144,9 +144,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.1/surge-src-1.3.1.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.2/surge-src-1.3.2.tar.gz",
                     "strip-components": 2,
-                    "sha256": "9bf2e4a88c18003e51c62b8bf646c52d0f735dfcdb952a32a19bba389fd35229"
+                    "sha256": "d12af4f73fbf10f329727e346c5d8686982f7652ebdbe848a76661382718595e"
                 },
                 {
                     "type": "patch",
