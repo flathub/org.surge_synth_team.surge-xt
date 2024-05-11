@@ -86,6 +86,14 @@
                     ]
                 },
                 {
+                    "type": "patch",
+                    "path": "patches/juce-x11-fix.patch",
+                    "options": [
+                        "-d",
+                        "libs/JUCE"
+                    ]
+                },
+                {
                     "type": "file",
                     "path": "org.surge_synth_team.surge-xt.desktop"
                 },
@@ -158,6 +166,14 @@
                     "options": [
                         "-d",
                         "libs/sst/sst-plugininfra"
+                    ]
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/juce-x11-fix.patch",
+                    "options": [
+                        "-d",
+                        "libs/JUCE"
                     ]
                 },
                 {
