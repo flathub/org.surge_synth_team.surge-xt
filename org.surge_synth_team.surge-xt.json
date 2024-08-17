@@ -14,7 +14,7 @@
     ],
     "build-options": {
         "env": {
-            "SURGE_VERSION": "1.3.2",
+            "SURGE_VERSION": "1.3.4",
             "PLUGINS_DIR": "/app/extensions/Plugins/Surge-XT",
             "PLUGINS_ID": "org.freedesktop.LinuxAudio.Plugins.Surge-XT"
         }
@@ -69,9 +69,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.2/surge-src-1.3.2.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.4/surge-src-1.3.4.tar.gz",
                     "strip-components": 2,
-                    "sha256": "d12af4f73fbf10f329727e346c5d8686982f7652ebdbe848a76661382718595e"
+                    "sha256": "d4b8f595a0595205ddd63eacadd23a0be33df46affc83afe9eafff7018990d55"
                 },
                 {
                     "type": "patch",
@@ -83,14 +83,6 @@
                     "options": [
                         "-d",
                         "libs/sst/sst-plugininfra"
-                    ]
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/juce-x11-fix.patch",
-                    "options": [
-                        "-d",
-                        "libs/JUCE"
                     ]
                 },
                 {
@@ -152,9 +144,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.2/surge-src-1.3.2.tar.gz",
+                    "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.3.4/surge-src-1.3.4.tar.gz",
                     "strip-components": 2,
-                    "sha256": "d12af4f73fbf10f329727e346c5d8686982f7652ebdbe848a76661382718595e"
+                    "sha256": "d4b8f595a0595205ddd63eacadd23a0be33df46affc83afe9eafff7018990d55"
                 },
                 {
                     "type": "patch",
@@ -166,14 +158,6 @@
                     "options": [
                         "-d",
                         "libs/sst/sst-plugininfra"
-                    ]
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/juce-x11-fix.patch",
-                    "options": [
-                        "-d",
-                        "libs/JUCE"
                     ]
                 },
                 {
