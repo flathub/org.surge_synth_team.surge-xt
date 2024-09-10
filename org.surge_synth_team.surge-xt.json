@@ -1,7 +1,7 @@
 {
     "id": "org.surge_synth_team.surge-xt",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
+    "runtime-version": "24.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "Surge-XT",
     "finish-args": [
@@ -22,7 +22,7 @@
     "add-extensions": {
         "org.freedesktop.LinuxAudio.Plugins.Surge-XT": {
             "directory": "extensions/Plugins/Surge-XT",
-            "version": "23.08",
+            "version": "24.08",
             "add-ld-path": "lib",
             "bundle": true,
             "subdirectories": true,
