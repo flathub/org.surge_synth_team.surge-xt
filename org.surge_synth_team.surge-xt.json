@@ -1,7 +1,7 @@
 {
     "id": "org.surge_synth_team.surge-xt",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "25.08",
+    "runtime-version": "26.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "Surge-XT",
     "finish-args": [
@@ -22,7 +22,7 @@
     "add-extensions": {
         "org.freedesktop.LinuxAudio.Plugins.Surge-XT": {
             "directory": "extensions/Plugins/Surge-XT",
-            "version": "25.08",
+            "version": "26.08",
             "add-ld-path": "lib",
             "bundle": true,
             "subdirectories": true,
@@ -34,6 +34,7 @@
         "/lib/lv2"
     ],
     "modules": [
+        "shared-modules/appstream/appstream-compose.json",
         {
             "name": "surge-xt",
             "buildsystem": "cmake-ninja",
@@ -44,7 +45,9 @@
                             "-DLINUX_ON_ARM=True"
                         ]
                     }
-                }
+                },
+                "cflags": "-Wno-error=discarded-qualifiers",
+                "cxxflags": "-Wno-error=discarded-qualifiers"
             },
             "config-opts": [
                 "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
@@ -111,7 +114,9 @@
                             "-DLINUX_ON_ARM=True"
                         ]
                     }
-                }
+                },
+                "cflags": "-Wno-error=discarded-qualifiers",
+                "cxxflags": "-Wno-error=discarded-qualifiers"
             },
             "config-opts": [
                 "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
