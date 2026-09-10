@@ -8,7 +8,7 @@
         "--socket=x11",
         "--share=ipc",
         "--socket=pulseaudio",
-        "--filesystem=xdg-run/pipewire-0",
+        "--filesystem=xdg-run/pipewire-0:ro",
         "--filesystem=xdg-documents/Surge XT:create",
         "--persist=.config"
     ],
